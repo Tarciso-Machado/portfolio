@@ -1,11 +1,33 @@
 import { useState } from "react";
-import { Mail, MessageSquare, Send, Github, Linkedin, Twitter } from "lucide-react";
+import {
+  Mail,
+  MessageSquare,
+  Send,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 
 const socials = [
-  { icon: Github, label: "GitHub", handle: "@joaosilva", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", handle: "in/joaosilva", href: "#" },
-  { icon: Twitter, label: "Twitter", handle: "@joaodev", href: "#" },
-  { icon: Mail, label: "Email", handle: "joao@email.com", href: "mailto:joao@email.com" },
+  {
+    icon: Github,
+    label: "GitHub",
+    handle: "@Tarciso Machado",
+    href: "https://github.com/Tarciso-Machado",
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    handle: "in/tarcisomachado",
+    href: "www.linkedin.com/in/tarciso-machado-7a16a32b0",
+  },
+  { icon: Twitter, label: "Twitter", handle: "@Tarcisodev", href: "#" },
+  {
+    icon: Mail,
+    label: "Email",
+    handle: "tarcisomachado935@gmail.com",
+    href: "mailto:tarcisomachado@gmail.com",
+  },
 ];
 
 export default function Contact() {
@@ -31,7 +53,8 @@ export default function Contact() {
             Vamos Conversar?
           </h2>
           <p className="text-muted-foreground font-body max-w-md mx-auto">
-            Tem um projeto em mente ou quer bater um papo sobre tecnologia? Estou sempre aberto a novas oportunidades.
+            Tem um projeto em mente ou quer bater um papo sobre tecnologia?
+            Estou sempre aberto a novas oportunidades.
           </p>
           <div className="mt-6 w-16 h-1 bg-gradient-to-r from-cyan to-transparent rounded-full mx-auto" />
         </div>
@@ -41,7 +64,9 @@ export default function Contact() {
           <div className="p-8 rounded-2xl bg-gradient-card border border-border">
             <div className="flex items-center gap-2 mb-6">
               <MessageSquare className="w-5 h-5 text-cyan" />
-              <h3 className="font-display font-semibold text-foreground">Enviar Mensagem</h3>
+              <h3 className="font-display font-semibold text-foreground">
+                Enviar Mensagem
+              </h3>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -79,7 +104,9 @@ export default function Contact() {
                   required
                   rows={5}
                   value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, message: e.target.value })
+                  }
                   placeholder="Conta-me sobre seu projeto..."
                   className="w-full px-4 py-3 rounded-lg bg-secondary/50 border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-cyan/50 focus:ring-1 focus:ring-cyan/30 transition-all font-body text-sm resize-none"
                 />
@@ -109,7 +136,8 @@ export default function Contact() {
                 Outras formas de me encontrar
               </h3>
               <p className="text-muted-foreground font-body text-sm leading-relaxed mb-8">
-                Prefere redes sociais? Me manda uma mensagem em qualquer plataforma abaixo. Respondo sempre que posso!
+                Prefere redes sociais? Me manda uma mensagem em qualquer
+                plataforma abaixo. Respondo sempre que posso!
               </p>
 
               <div className="space-y-3">
@@ -123,8 +151,12 @@ export default function Contact() {
                       <Icon className="w-4 h-4 text-muted-foreground group-hover:text-cyan transition-colors" />
                     </div>
                     <div>
-                      <div className="font-display font-medium text-foreground text-sm">{label}</div>
-                      <div className="font-mono text-xs text-muted-foreground">{handle}</div>
+                      <div className="font-display font-medium text-foreground text-sm">
+                        {label}
+                      </div>
+                      <div className="font-mono text-xs text-muted-foreground">
+                        {handle}
+                      </div>
                     </div>
                     <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
                       <div className="w-2 h-2 rounded-full bg-cyan" />
@@ -135,9 +167,14 @@ export default function Contact() {
             </div>
 
             <div className="mt-8 p-5 rounded-xl bg-cyan/5 border border-cyan/20">
-              <p className="font-mono text-xs text-cyan mb-2">// disponibilidade</p>
+              <p className="font-mono text-xs text-cyan mb-2">
+                // disponibilidade
+              </p>
               <p className="font-body text-sm text-muted-foreground">
-                Atualmente <span className="text-foreground font-medium">disponível</span> para projetos freelance e oportunidades fulltime remotas. Respondo em até 24h.
+                Atualmente{" "}
+                <span className="text-foreground font-medium">disponível</span>{" "}
+                para projetos freelance e oportunidades fulltime remotas.
+                Respondo em até 24h.
               </p>
             </div>
           </div>

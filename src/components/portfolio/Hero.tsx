@@ -25,7 +25,10 @@ export default function Hero() {
 
       {/* Glow orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan/5 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-cyan/3 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
+      <div
+        className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-cyan/3 rounded-full blur-3xl animate-float"
+        style={{ animationDelay: "3s" }}
+      />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
@@ -36,23 +39,35 @@ export default function Hero() {
         </div>
 
         {/* Name */}
-        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 animate-fade-in" style={{ animationDelay: "0.15s" }}>
-          João{" "}
-          <span className="text-gradient">Silva</span>
+        <h1
+          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 animate-fade-in"
+          style={{ animationDelay: "0.15s" }}
+        >
+          Tarciso <span className="text-gradient">Machado</span>
         </h1>
 
         {/* Title */}
-        <div className="font-mono text-xl md:text-2xl text-muted-foreground mb-6 animate-fade-in cursor-blink" style={{ animationDelay: "0.3s" }}>
+        <div
+          className="font-mono text-xl md:text-2xl text-muted-foreground mb-6 animate-fade-in cursor-blink"
+          style={{ animationDelay: "0.3s" }}
+        >
           Fullstack Developer
         </div>
 
         {/* Description */}
-        <p className="max-w-xl mx-auto text-muted-foreground font-body text-base md:text-lg leading-relaxed mb-10 animate-fade-in" style={{ animationDelay: "0.45s" }}>
-          Construo experiências digitais de ponta a ponta — do banco de dados ao pixel perfeito. Especializado em React, Node.js e arquitetura cloud.
+        <p
+          className="max-w-xl mx-auto text-muted-foreground font-body text-base md:text-lg leading-relaxed mb-10 animate-fade-in"
+          style={{ animationDelay: "0.45s" }}
+        >
+          Construo experiências digitais de ponta a ponta — do banco de dados ao
+          pixel perfeito. Especializado em React, Node.js e arquitetura cloud.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-12 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+        <div
+          className="flex flex-wrap items-center justify-center gap-4 mb-12 animate-fade-in"
+          style={{ animationDelay: "0.6s" }}
+        >
           <a
             href="#projects"
             className="px-8 py-3 rounded-full bg-cyan text-primary-foreground font-display font-semibold text-sm hover:opacity-90 glow-primary transition-all duration-200 hover:scale-105"
@@ -69,10 +84,21 @@ export default function Hero() {
         </div>
 
         {/* Social icons */}
-        <div className="flex items-center justify-center gap-5 animate-fade-in" style={{ animationDelay: "0.75s" }}>
+        <div
+          className="flex items-center justify-center gap-5 animate-fade-in"
+          style={{ animationDelay: "0.75s" }}
+        >
           {[
-            { icon: Github, href: "#", label: "GitHub" },
-            { icon: Linkedin, href: "#", label: "LinkedIn" },
+            {
+              icon: Github,
+              href: "https://github.com/Tarciso-Machado",
+              label: "GitHub",
+            },
+            {
+              icon: Linkedin,
+              href: "www.linkedin.com/in/tarciso-machado-7a16a32b0",
+              label: "LinkedIn",
+            },
             { icon: Mail, href: "#contact", label: "Email" },
           ].map(({ icon: Icon, href, label }) => (
             <a

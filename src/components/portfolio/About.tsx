@@ -1,7 +1,7 @@
 import { Calendar, MapPin, Briefcase, GraduationCap } from "lucide-react";
 
 const stats = [
-  { value: "5+", label: "Anos de Experiência" },
+  { value: "3+", label: "Anos de Experiência" },
   { value: "40+", label: "Projetos Entregues" },
   { value: "15+", label: "Clientes Satisfeitos" },
   { value: "99%", label: "Taxa de Sucesso" },
@@ -10,24 +10,17 @@ const stats = [
 const timeline = [
   {
     icon: Briefcase,
-    date: "2022 – Atual",
+    date: "2024 – 2026",
     title: "Senior Fullstack Developer",
-    company: "TechCorp Brasil",
+    company: "TechCorp",
     desc: "Liderança técnica de squads, arquitetura de microsserviços e desenvolvimento de produtos SaaS com React e Node.js.",
   },
   {
     icon: Briefcase,
-    date: "2020 – 2022",
+    date: "2023 – 2024",
     title: "Fullstack Developer",
-    company: "Startup XYZ",
+    company: "Startup workly",
     desc: "Construção de plataforma B2B do zero, integrações com APIs de pagamento e entrega de features críticas.",
-  },
-  {
-    icon: GraduationCap,
-    date: "2016 – 2020",
-    title: "Bacharelado em Ciência da Computação",
-    company: "Universidade Federal",
-    desc: "Formação sólida em algoritmos, estruturas de dados, sistemas distribuídos e engenharia de software.",
   },
 ];
 
@@ -50,16 +43,21 @@ export default function About() {
           {/* Left: bio */}
           <div>
             <p className="text-muted-foreground font-body text-lg leading-relaxed mb-6">
-              Sou um desenvolvedor fullstack apaixonado por criar soluções que unem design excepcional a uma engenharia robusta. Com mais de 5 anos de experiência, transformo ideias complexas em produtos digitais que as pessoas amam usar.
+              Sou um desenvolvedor fullstack apaixonado por criar soluções que
+              unem design excepcional a uma engenharia robusta. Com mais de 3
+              anos de experiência, transformo ideias complexas em produtos
+              digitais que as pessoas amam usar.
             </p>
             <p className="text-muted-foreground font-body leading-relaxed mb-8">
-              Do frontend reativo ao backend escalável, gosto de ter visão completa do sistema. Acredito que o código limpo e a experiência do usuário não são opostos — são aliados.
+              Do frontend reativo ao backend escalável, gosto de ter visão
+              completa do sistema. Acredito que o código limpo e a experiência
+              do usuário não são opostos — são aliados.
             </p>
 
             {/* Info chips */}
             <div className="flex flex-wrap gap-3 mb-10">
               {[
-                { icon: MapPin, text: "São Paulo, Brasil" },
+                { icon: MapPin, text: "Luanda, Angola" },
                 { icon: Calendar, text: "Disponível Freelance" },
                 { icon: Briefcase, text: "Open to Remote" },
               ].map(({ icon: Icon, text }) => (
@@ -83,7 +81,9 @@ export default function About() {
                   <div className="font-display text-3xl font-bold text-gradient mb-1">
                     {value}
                   </div>
-                  <div className="text-muted-foreground text-sm font-body">{label}</div>
+                  <div className="text-muted-foreground text-sm font-body">
+                    {label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -99,12 +99,18 @@ export default function About() {
                     <item.icon className="w-4 h-4 text-cyan" />
                   </div>
                   <div className="p-5 rounded-xl bg-gradient-card border border-border hover:border-cyan/30 transition-all duration-300 group">
-                    <span className="font-mono text-xs text-cyan mb-2 block">{item.date}</span>
+                    <span className="font-mono text-xs text-cyan mb-2 block">
+                      {item.date}
+                    </span>
                     <h3 className="font-display font-semibold text-foreground text-base mb-0.5 group-hover:text-cyan transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-3 font-body">{item.company}</p>
-                    <p className="text-muted-foreground text-sm font-body leading-relaxed">{item.desc}</p>
+                    <p className="text-muted-foreground text-sm mb-3 font-body">
+                      {item.company}
+                    </p>
+                    <p className="text-muted-foreground text-sm font-body leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))}
