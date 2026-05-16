@@ -2,11 +2,15 @@ import { useState, useEffect } from "react";
 import { Menu, X, Code2 } from "lucide-react";
 
 const navLinks = [
-  { label: "Sobre", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projetos", href: "#projects" },
-  { label: "Contato", href: "#contact" },
+  { label: "Sobre", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Projetos", id: "projects" },
+  { label: "Contato", id: "contact" },
 ];
+
+const scrollTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,33 +32,36 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-6">
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 group">
+        <button
+          onClick={() => scrollTo("hero")}
+          className="flex items-center gap-2 group"
+        >
           <div className="w-8 h-8 rounded-md bg-cyan flex items-center justify-center glow-soft group-hover:animate-pulse-glow transition-all">
             <Code2 className="w-4 h-4 text-primary-foreground" />
           </div>
           <span className="font-display font-bold text-foreground text-lg">
             dev<span className="text-gradient">.</span>portfolio
           </span>
-        </a>
+        </button>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
+            <button
+              key={link.id}
+              onClick={() => scrollTo(link.id)}
               className="font-body text-sm text-muted-foreground hover:text-cyan transition-colors duration-200 relative group"
             >
               {link.label}
               <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-cyan transition-all duration-300 group-hover:w-full" />
-            </a>
+            </button>
           ))}
-          <a
-            href="#contact"
+          <button
+            onClick={() => scrollTo("contact")}
             className="ml-2 px-5 py-2 rounded-full border border-cyan text-cyan text-sm font-display font-medium hover:bg-cyan hover:text-primary-foreground transition-all duration-200 glow-soft hover:glow-primary"
           >
             Hire Me
-          </a>
+          </button>
         </nav>
 
         {/* Mobile toggle */}
@@ -70,22 +77,26 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-card border-b border-border px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-muted-foreground hover:text-cyan transition-colors font-body text-sm"
+            <button
+              key={link.id}
+              onClick={() => {
+                scrollTo(link.id);
+                setMenuOpen(false);
+              }}
+              className="text-muted-foreground hover:text-cyan transition-colors font-body text-sm text-left"
             >
               {link.label}
-            </a>
+            </button>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
+          <button
+            onClick={() => {
+              scrollTo("contact");
+              setMenuOpen(false);
+            }}
             className="px-5 py-2 rounded-full border border-cyan text-cyan text-sm font-display font-medium w-fit hover:bg-cyan hover:text-primary-foreground transition-all"
           >
             Hire Me
-          </a>
+          </button>
         </div>
       )}
     </header>
