@@ -1,6 +1,10 @@
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
+const scrollTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
+
 export default function Hero() {
   return (
     <section
@@ -68,19 +72,19 @@ export default function Hero() {
           className="flex flex-wrap items-center justify-center gap-4 mb-12 animate-fade-in"
           style={{ animationDelay: "0.6s" }}
         >
-          <a
-            href="#projects"
+          <button
+            onClick={() => scrollTo("projects")}
             className="px-8 py-3 rounded-full bg-cyan text-primary-foreground font-display font-semibold text-sm hover:opacity-90 glow-primary transition-all duration-200 hover:scale-105"
           >
             Ver Projetos
-          </a>
-          <a
-            href="#contact"
+          </button>
+          <button
+            onClick={() => scrollTo("contact")}
             className="px-8 py-3 rounded-full border border-border bg-secondary/50 text-foreground font-display font-semibold text-sm hover:border-cyan/50 transition-all duration-200 hover:scale-105 backdrop-blur-sm"
           >
             <Download className="w-4 h-4 inline mr-2" />
             Baixar CV
-          </a>
+          </button>
         </div>
 
         {/* Social icons */}
@@ -96,10 +100,14 @@ export default function Hero() {
             },
             {
               icon: Linkedin,
-              href: "www.linkedin.com/in/tarciso-machado-7a16a32b0",
+              href: "https://www.linkedin.com/in/tarciso-machado-7a16a32b0",
               label: "LinkedIn",
             },
-            { icon: Mail, href: "#contact", label: "Email" },
+            {
+              icon: Mail,
+              href: "mailto:tarcisomachado935@gmail.com",
+              label: "Email",
+            },
           ].map(({ icon: Icon, href, label }) => (
             <a
               key={label}
@@ -114,13 +122,13 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <a
-        href="#about"
+      <button
+        onClick={() => scrollTo("about")}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-cyan transition-colors animate-bounce"
       >
         <span className="text-xs font-mono">scroll</span>
         <ArrowDown className="w-4 h-4" />
-      </a>
+      </button>
     </section>
   );
 }

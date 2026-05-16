@@ -19,7 +19,7 @@ const socials = [
     icon: Linkedin,
     label: "LinkedIn",
     handle: "in/tarcisomachado",
-    href: "www.linkedin.com/in/tarciso-machado-7a16a32b0",
+    href: "https://www.linkedin.com/in/tarciso-machado-7a16a32b0",
   },
   { icon: Twitter, label: "Twitter", handle: "@Tarcisodev", href: "#" },
   {
